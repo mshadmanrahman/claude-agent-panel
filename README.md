@@ -8,9 +8,9 @@
 Watch your helper agents work, see what they cost, and know if your weekly limit will last.
 
 ![Works with Claude Code](https://img.shields.io/badge/works%20with-Claude%20Code-D97757)
-![Free](https://img.shields.io/badge/price-free-2B35FF)
-![No coding needed](https://img.shields.io/badge/coding-not%20needed-3BA55C)
-![Install time](https://img.shields.io/badge/install-2%20minutes-FFE14D)
+![Free](https://img.shields.io/badge/price-free-8E8E93)
+![No coding needed](https://img.shields.io/badge/coding-not%20needed-4CC38A)
+![Install time](https://img.shields.io/badge/install-2%20minutes-E0A44A)
 
 [Watch it](#watch-it-work) · [What it does](#what-you-get) · [Install](#install-it-pick-one-way) · [Did it work?](#did-it-work) · [Help!](#something-went-wrong) · [Remove it](#remove-it)
 

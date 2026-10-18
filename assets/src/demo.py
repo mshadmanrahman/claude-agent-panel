@@ -14,15 +14,17 @@ T = 18.0
 FADE = 0.3
 MOVE = 0.35
 
-INK = "#1f1e1d"
-MUTED = "#5e5d59"
-LINE = "#e6e5e2"
-CARD = "#ffffff"
-APP = "#fcfcfb"
-CHROME = "#ecebe8"
+INK = "#ecebe8"
+MUTED = "#a6a39b"
+LINE = "#333230"
+CARD = "#201f20"
+APP = "#151515"
+CHROME = "#2b2a28"
 ORANGE = "#D97757"
-BLUE = "#2B35FF"
-YELLOW = "#FFE14D"
+BACKDROP = "#3a3836"
+CHIP = "#2a2928"
+CALLOUT = "#2c2b29"
+ARROW = "#d9d6cf"
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 MONO = "'SF Mono', Menlo, Consolas, monospace"
 
@@ -90,9 +92,9 @@ END = 17.3
 PROMPT = "Use three agents at once: plan a birthday party, build a shopping list, and review both."
 
 AGENTS = {
-    "arch": ("architect", "Plan the birthday party", "careful", "#D9932B", "Opus 5.5", "184k", "2:40", "≈$0.41", 0.55),
-    "dev": ("developer", "Build the shopping list", "medium", "#3D8FD1", "Sonnet 5.5", "121k", "1:55", "≈$0.18", 0.4),
-    "rev": ("reviewer", "Review the plan and list", "light", "#2E9E6A", "Haiku 5.5", "48k", "0:37", "≈$0.02", 0.18),
+    "arch": ("architect", "Plan the birthday party", "careful", "#E0A44A", "Opus 5.5", "184k", "2:40", "≈$0.41", 0.55),
+    "dev": ("developer", "Build the shopping list", "medium", "#5AA9E6", "Sonnet 5.5", "121k", "1:55", "≈$0.18", 0.4),
+    "rev": ("reviewer", "Review the plan and list", "light", "#4CC38A", "Haiku 5.5", "48k", "0:37", "≈$0.02", 0.18),
 }
 
 # Window geometry.
@@ -191,17 +193,17 @@ def band() -> str:
 <g>{hdr_tr}
   <text x="{BX + 16}" y="25" font-family="{SANS}" font-size="13.5" fill="{INK}"><tspan font-weight="700">Agents</tspan><tspan dx="10" fill="{MUTED}" font-family="{MONO}" font-size="12.5">≈$1.67 · 665k · 4:12</tspan></text>
   {text(usage_x, 25, 'Usage', 13, MUTED)}
-  <rect x="{usage_x + 46}" y="15" width="64" height="12" rx="2" fill="#efeeeb"/>
-  <rect x="{usage_x + 46}" y="15" width="37" height="12" rx="2" fill="#9a9a9e"/>
+  <rect x="{usage_x + 46}" y="15" width="64" height="12" rx="2" fill="{CHIP}"/>
+  <rect x="{usage_x + 46}" y="15" width="37" height="12" rx="2" fill="#8e8e93"/>
   {text(usage_x + 120, 25, '58% / 64% Week, On Pace', 13, INK)}
   <rect x="{BX + BW - 62}" y="9" width="48" height="24" rx="6" fill="{CARD}" stroke="{LINE}"/>
   {text(BX + BW - 38, 25, 'Hide', 12.5, INK, 500, 'middle')}
 </g>
 <g>{cap_tr}
   {avatar('main', 'running', BX + 14, 2)}{dots(BX + 62, 15)}
-  <text x="{BX + 92}" y="25" font-family="{SANS}" font-size="13.5" fill="{INK}"><tspan font-weight="650">Main agent</tspan><tspan dx="9" fill="#3D8FD1">medium</tspan><tspan dx="9" fill="{MUTED}">Opus 5.5</tspan></text>
+  <text x="{BX + 92}" y="25" font-family="{SANS}" font-size="13.5" fill="{INK}"><tspan font-weight="650">Main agent</tspan><tspan dx="9" fill="#5AA9E6">medium</tspan><tspan dx="9" fill="{MUTED}">Opus 5.5</tspan></text>
   <rect x="{BX + BW - 230}" y="19" width="60" height="3" rx="1.5" fill="{LINE}"/>
-  <rect x="{BX + BW - 230}" y="19" width="18" height="3" rx="1.5" fill="#3D8FD1"/>
+  <rect x="{BX + BW - 230}" y="19" width="18" height="3" rx="1.5" fill="#5AA9E6"/>
   {text(BX + BW - 120, 25, '312k', 12.5, MUTED, anchor='end', family=MONO)}
   {text(BX + BW - 72, 25, '4:12', 12.5, MUTED, anchor='end', family=MONO)}
   {text(BX + BW - 14, 25, '≈$1.06', 12.5, MUTED, anchor='end', family=MONO)}
@@ -228,7 +230,7 @@ def transcript() -> str:
     # The sent message, as a bubble on the right.
     bw = 600
     out.append(f"""<g>{shown([(SENT, END)])}
-  <rect x="{WX + WW - 60 - bw}" y="130" width="{bw}" height="40" rx="12" fill="#f0efec"/>
+  <rect x="{WX + WW - 60 - bw}" y="130" width="{bw}" height="40" rx="12" fill="{CHIP}"/>
   {text(WX + WW - 60 - bw + 16, 155, PROMPT, 13.5)}</g>""")
     out.append(f"""<g>{shown([(REPLY, END)])}{spark(tx, 196)}
   {text(tx + 28, 210, "On it. I'm starting three helpers so they all work at the same time.", 14.5)}</g>""")
@@ -252,7 +254,7 @@ def composer() -> str:
     return f"""
 <clipPath id="typing"><rect x="{cx + 16}" y="{cy + 12}" height="26" width="0">{anim('width', clip_w)}</rect></clipPath>
 <rect x="{cx}" y="{cy}" width="{cw}" height="78" rx="14" fill="{CARD}" stroke="{LINE}"/>
-<g>{anim('opacity', ph_pts)}{text(cx + 18, cy + 30, 'Reply to Claude…', 14, '#9b9a95')}</g>
+<g>{anim('opacity', ph_pts)}{text(cx + 18, cy + 30, 'Reply to Claude…', 14, '#77756f')}</g>
 <g clip-path="url(#typing)">{anim('opacity', type_pts)}{text(cx + 18, cy + 30, PROMPT, 14)}</g>
 {text(cx + cw - 132, cy + 60, 'Opus 5.5', 12.5, MUTED)}{text(cx + cw - 76, cy + 60, 'medium', 12.5, MUTED)}
 <rect x="{cx + cw - 46}" y="{cy + 12}" width="30" height="30" rx="8" fill="{ORANGE}"/>
@@ -270,37 +272,47 @@ def window() -> str:
 {text(WX + WW / 2, WY + 24, 'Claude', 13, MUTED, 500, 'middle')}
 <line x1="{MX}" y1="{WY + title_h}" x2="{MX}" y2="{WY + WH}" stroke="{LINE}"/>
 <!-- sidebar -->
-<rect x="{sx + 12}" y="{WY + 52}" width="{SIDE - 24}" height="30" rx="7" fill="#efeeeb"/>
+<rect x="{sx + 12}" y="{WY + 52}" width="{SIDE - 24}" height="30" rx="7" fill="{CHIP}"/>
 <rect x="{sx + SIDE / 2}" y="{WY + 55}" width="{SIDE / 2 - 15}" height="24" rx="5" fill="{CARD}" stroke="{LINE}"/>
 {text(sx + SIDE / 4 + 6, WY + 72, 'Chat', 12.5, MUTED, 400, 'middle')}{text(sx + SIDE * 3 / 4 - 4, WY + 72, 'Code', 12.5, INK, 650, 'middle')}
 {text(sx + 22, WY + 112, '+   New session', 13, INK)}
 {text(sx + 22, WY + 148, 'Recents', 11.5, MUTED)}
-<rect x="{sx + 12}" y="{WY + 156}" width="{SIDE - 24}" height="28" rx="6" fill="#efeeeb"/>
+<rect x="{sx + 12}" y="{WY + 156}" width="{SIDE - 24}" height="28" rx="6" fill="{CHIP}"/>
 {spark(sx + 20, WY + 163, 14)}{text(sx + 42, WY + 175, 'Plan a birthday party', 12.5, INK)}
 <circle cx="{sx + 27}" cy="{WY + 203}" r="4" fill="none" stroke="{MUTED}"/>{text(sx + 42, WY + 207, 'Fix my CV wording', 12.5, MUTED)}
 <circle cx="{sx + 27}" cy="{WY + 233}" r="4" fill="none" stroke="{MUTED}"/>{text(sx + 42, WY + 237, 'Weekend trip ideas', 12.5, MUTED)}
 <!-- top bar -->
 {text(MX + 24, WY + 66, 'Plan a birthday party', 14, INK, 650)}
-<rect x="{MX + 190}" y="{WY + 50}" width="96" height="24" rx="6" fill="#f0efec"/>
+<rect x="{MX + 190}" y="{WY + 50}" width="96" height="24" rx="6" fill="{CHIP}"/>
 {text(MX + 238, WY + 66, 'party-plans', 12, MUTED, 400, 'middle')}
 <line x1="{MX}" y1="{WY + 88}" x2="{WX + WW}" y2="{WY + 88}" stroke="{LINE}"/>"""
 
 
-def callout(x: float, y: float, label: str, span: tuple[float, float], tip: tuple[float, float],
-            gutter: bool = False) -> str:
-    """A yellow label with an arrow to tip. gutter=True runs the arrow down the band's left margin."""
-    w = 11 + len(label) * 8.6
-    tx, ty = tip
-    if gutter:
-        gx = BX + 4
-        d = f"M{gx} {y + 40} V{ty - 8} Q{gx} {ty} {tx} {ty}"
-    else:
-        d = f"M{x + w / 2} {y + 40} Q{x + w / 2} {ty - 6} {tx} {ty}"
+def elbow(pts: list[tuple[float, float]], r: float = 10) -> str:
+    """A path through right-angle waypoints, each corner rounded to radius r."""
+    d = f"M{pts[0][0]} {pts[0][1]}"
+    for (ax, ay), (bx, by), (cx, cy) in zip(pts, pts[1:], pts[2:]):
+        ux, uy = (bx > ax) - (bx < ax), (by > ay) - (by < ay)
+        vx, vy = (cx > bx) - (cx < bx), (cy > by) - (cy < by)
+        k = min(r, abs(bx - ax) + abs(by - ay), abs(cx - bx) + abs(cy - by)) / 1
+        sweep = 1 if ux * vy - uy * vx > 0 else 0
+        d += f" L{bx - ux * k} {by - uy * k} A{k} {k} 0 0 {sweep} {bx + vx * k} {by + vy * k}"
+    return d + f" L{pts[-1][0]} {pts[-1][1]}"
+
+
+def label_w(label: str) -> float:
+    return 28 + len(label) * 7.9
+
+
+def callout(x: float, y: float, label: str, span: tuple[float, float], route: list[tuple[float, float]]) -> str:
+    """A dark label with an elbow arrow along route, which starts at the label's edge."""
+    w = label_w(label)
     return f"""<g>{shown([span])}
-  <path d="{d}" fill="none" stroke="{INK}" stroke-width="2.4" stroke-linecap="round" marker-end="url(#tip)"/>
-  <rect x="{x + 3}" y="{y + 4}" width="{w}" height="40" rx="10" fill="{INK}"/>
-  <rect x="{x}" y="{y}" width="{w}" height="40" rx="10" fill="{YELLOW}" stroke="{INK}" stroke-width="2"/>
-  {text(x + w / 2, y + 26, label, 16, INK, 750, 'middle')}
+  <path d="{elbow(route)}" fill="none" stroke="{ARROW}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#tip)"/>
+  <circle cx="{route[0][0]}" cy="{route[0][1]}" r="3" fill="{ARROW}"/>
+  <rect x="{x}" y="{y}" width="{w}" height="36" rx="18" fill="{CALLOUT}" stroke="{ORANGE}" stroke-width="1.5"/>
+  <circle cx="{x + 18}" cy="{y + 18}" r="4" fill="{ORANGE}"/>
+  {text(x + 30, y + 23, label, 14.5, INK, 600)}
 </g>"""
 
 
@@ -308,22 +320,28 @@ def build() -> str:
     hdr_y_full = box_top(STATES[3][1]) + 6
     rows_y = hdr_y_full + ROW * 2
     fold_hdr = box_top(STATES[4][1]) + 6
+    fold_row = fold_hdr + ROW * 2
+    usage_x = BX + BW - 372
+    l1, l2 = "Each helper gets a character", "Happy face means the job is done"
+    l3, l4 = "Finished helpers fold away", "Weekly limit: still on pace"
+    gx = BX - 4
     calls = [
-        callout(BX - 10, 392, "Each helper gets a character", (STARTS["arch"] + 0.4, DONE["arch"] - 0.2),
-                (BX + 14, rows_y + 20), gutter=True),
-        callout(BX - 10, 392, "Happy face = job done", (DONE["arch"], FOLD - 0.1), (BX + 14, rows_y + 20),
-                gutter=True),
-        callout(MX + 440, 430, "Finished helpers fold away", (FOLD + 0.3, FINAL + 1.6),
-                (BX + 184, fold_hdr + ROW * 2 + 22)),
-        callout(MX + 560, 430, "Weekly limit: still on pace", (FINAL + 1.7, END), (BX + BW - 372 + 78, fold_hdr + 12)),
+        callout(gx - 12, 400, l1, (STARTS["arch"] + 0.4, DONE["arch"] - 0.2),
+                [(gx, 436), (gx, rows_y + 20), (BX + 10, rows_y + 20)]),
+        callout(gx - 12, 400, l2, (DONE["arch"], FOLD - 0.1),
+                [(gx, 436), (gx, rows_y + 20), (BX + 10, rows_y + 20)]),
+        callout(MX + 470, 440, l3, (FOLD + 0.3, FINAL + 1.6),
+                [(MX + 470 + label_w(l3) / 2, 476), (MX + 470 + label_w(l3) / 2, fold_row + 21), (BX + 184, fold_row + 21)]),
+        callout(usage_x + 78 - label_w(l4) / 2, 440, l4, (FINAL + 1.7, END),
+                [(usage_x + 78, 476), (usage_x + 78, fold_hdr + 11)]),
     ]
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="840" viewBox="0 0 1280 840" role="img" aria-labelledby="t">
 <title id="t">The Claude app's Code tab: you ask for three agents, they appear in the band above the prompt box, finish one by one, and fold away.</title>
 <defs>
   <filter id="blur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="16"/></filter>
-  <marker id="tip" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M2 2 L10 6 L2 10" fill="none" stroke="{INK}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  <marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9 Z" fill="{ARROW}" stroke="{ARROW}" stroke-width="1" stroke-linejoin="round"/></marker>
 </defs>
-<rect width="1280" height="840" fill="{BLUE}"/>
+<rect width="1280" height="840" fill="{BACKDROP}"/>
 {window()}
 {transcript()}
 {band()}
