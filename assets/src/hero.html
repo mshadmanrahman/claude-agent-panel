@@ -1,8 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
 :root{
-  --paper:#FAF9F5; --card:#FFFFFF; --ink:#1F1E1C; --mute:#8A877F; --line:#E7E4DC;
-  --coral:#D97757; --green:#3BA55C; --amber:#D99A3B; --red:#C0392B; --grey:#9AA0A6;
-  --blue:#2B35FF; --yellow:#FFE14D; --pink:#FF5C7A; --night:#1C2632;
+  --paper:#151515; --card:#201f20; --ink:#ecebe8; --mute:#a6a39b; --line:#333230; --chip:#2a2928; --body:#c9c6bf;
+  --coral:#D97757; --green:#4CC38A; --amber:#E0A44A; --red:#E5534B; --grey:#8e8e93;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -16,13 +15,13 @@ img.av{width:50px;height:41px;image-rendering:pixelated;flex-shrink:0}
 .row .desc{font-weight:600;overflow:hidden;text-overflow:ellipsis}
 .grow{flex:1}
 .bar{font-family:'JetBrains Mono',monospace;letter-spacing:-1px}
-.btn{border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13px;font-weight:500;background:#fff}
-.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn{border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13px;font-weight:500;background:var(--chip)}
+.btn.primary{background:var(--coral);color:#fff;border-color:var(--coral)}
 .prompt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--mute);font-size:15px;display:flex;justify-content:space-between;align-items:center}
 .send{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;color:#fff;font-weight:700}
 
 /* Numbered callouts */
-.pin{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:800 15px Archivo,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 4px var(--paper)}
+.pin{width:30px;height:30px;border-radius:50%;background:var(--coral);color:#fff;font:800 15px Archivo,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 4px var(--paper)}
 .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 28px;margin-top:26px}
 .legend div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4}
 .legend b{display:block;font-size:16px}
@@ -38,19 +37,19 @@ img.av{width:50px;height:41px;image-rendering:pixelated;flex-shrink:0}
 .cursor{display:inline-block;width:9px;height:18px;background:#E6E6E6;vertical-align:-3px}
 
 h1,h2,.display{font-family:Archivo,sans-serif}
-.step{font:800 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.step{font:800 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--coral)}
 .cap{font-size:22px;font-weight:700;font-family:Archivo,sans-serif;margin:6px 0 18px}
 
-body{background:var(--blue)}
+body{background:var(--paper)}
 .hero{padding:52px 64px;color:#fff;position:relative}
-.tag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:700;font-size:14px;padding:5px 12px;border-radius:6px}
+.tag{display:inline-block;background:var(--chip);color:var(--ink);border:1.5px solid var(--coral);font-weight:700;font-size:14px;padding:5px 12px;border-radius:6px}
 h1{font-size:88px;font-weight:900;font-stretch:75%;line-height:.95;margin:18px 0 12px;letter-spacing:-.01em}
-h1 em{font-style:normal;color:var(--yellow)}
+h1 em{font-style:normal;color:var(--coral)}
 .hero>p{font-size:22px;max-width:760px;opacity:.92;line-height:1.35}
 .crew{position:absolute;right:58px;top:60px;display:grid;grid-template-columns:repeat(4,auto);gap:10px 18px;background:rgba(255,255,255,.1);padding:18px 20px;border-radius:16px}
 .crew figure{display:flex;flex-direction:column;align-items:center;gap:4px}
 .crew img.av{width:68px;height:56px}
-.crew figcaption{font:600 12px 'JetBrains Mono',monospace;color:var(--yellow)}
+.crew figcaption{font:600 12px 'JetBrains Mono',monospace;color:var(--mute)}
 .band{color:var(--ink);box-shadow:0 20px 50px rgba(0,0,0,.25)}
 </style></head><body>
 <div class="hero">
@@ -58,5 +57,5 @@ h1 em{font-style:normal;color:var(--yellow)}
   <h1>See your agents <em>work.</em></h1>
   <p>A tiny pixel crew above your prompt box, plus a bar that tells you if your weekly limit will last.</p>
   <div class="crew"><figure><img class="av" src="../crew/main-running.svg" alt=""><figcaption>Captain</figcaption></figure><figure><img class="av" src="../crew/architect-running.svg" alt=""><figcaption>Architect</figcaption></figure><figure><img class="av" src="../crew/developer-running.svg" alt=""><figcaption>Developer</figcaption></figure><figure><img class="av" src="../crew/reviewer-running.svg" alt=""><figcaption>Reviewer</figcaption></figure><figure><img class="av" src="../crew/shipper-running.svg" alt=""><figcaption>Shipper</figcaption></figure><figure><img class="av" src="../crew/scout-running.svg" alt=""><figcaption>Scout</figcaption></figure><figure><img class="av" src="../crew/explore-running.svg" alt=""><figcaption>Explorer</figcaption></figure></div>
-  <div class="band" style="margin-top:34px"><div class="row"><b>Agents</b><span class="dim">≈$1.67 · 665k · 4:12</span><span class="grow"></span><span class="dim">Usage</span><span class="bar"><span style="color:#9AA0A6">██████</span><span style="color:#D5D2CA">░░░░</span></span><span class="dim">58% / 64% Week, On Pace</span><span class="btn">Hide</span></div><div class="row"><img class="av" src="../crew/main-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Main agent</span><span style="color:#4A9FD9">medium</span><span class="dim">Opus 5.5</span><span class="grow"></span><span class="bar"><span style="color:#4A9FD9">━━</span><span style="color:#D5D2CA">━━━━</span></span><span class="dim">312k</span><span class="dim">4:12</span><span class="dim">≈$1.06</span></div><div class="row"><img class="av" src="../crew/architect-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Plan the recipe-search page</span><span style="color:#D99A3B">careful</span><span class="dim">Opus 5.5</span><span class="grow"></span><span class="bar"><span style="color:#D99A3B">━</span><span style="color:#D5D2CA">━━━━━</span></span><span class="dim">184k</span><span class="dim">2:40</span><span class="dim">≈$0.41</span></div><div class="row"><img class="av" src="../crew/developer-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Build the search filters</span><span style="color:#4A9FD9">medium</span><span class="dim">Sonnet 5.5</span><span class="grow"></span><span class="bar"><span style="color:#4A9FD9">━</span><span style="color:#D5D2CA">━━━━━</span></span><span class="dim">121k</span><span class="dim">1:55</span><span class="dim">≈$0.18</span></div><div class="row"><img class="av" src="../crew/scout-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Run the tests and report</span><span style="color:#3BB8A0">light</span><span class="dim">Haiku 5.5</span><span class="grow"></span><span class="bar"><span style="color:#3BB8A0"></span><span style="color:#D5D2CA">━━━━━━</span></span><span class="dim">48k</span><span class="dim">0:37</span><span class="dim">≈$0.02</span></div></div>
+  <div class="band" style="margin-top:34px"><div class="row"><b>Agents</b><span class="dim">≈$1.67 · 665k · 4:12</span><span class="grow"></span><span class="dim">Usage</span><span class="bar"><span style="color:#8e8e93">██████</span><span style="color:#3a3836">░░░░</span></span><span class="dim">58% / 64% Week, On Pace</span><span class="btn">Hide</span></div><div class="row"><img class="av" src="../crew/main-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Main agent</span><span style="color:#5AA9E6">medium</span><span class="dim">Opus 5.5</span><span class="grow"></span><span class="bar"><span style="color:#5AA9E6">━━</span><span style="color:#3a3836">━━━━</span></span><span class="dim">312k</span><span class="dim">4:12</span><span class="dim">≈$1.06</span></div><div class="row"><img class="av" src="../crew/architect-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Plan the recipe-search page</span><span style="color:#E0A44A">careful</span><span class="dim">Opus 5.5</span><span class="grow"></span><span class="bar"><span style="color:#E0A44A">━</span><span style="color:#3a3836">━━━━━</span></span><span class="dim">184k</span><span class="dim">2:40</span><span class="dim">≈$0.41</span></div><div class="row"><img class="av" src="../crew/developer-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Build the search filters</span><span style="color:#5AA9E6">medium</span><span class="dim">Sonnet 5.5</span><span class="grow"></span><span class="bar"><span style="color:#5AA9E6">━</span><span style="color:#3a3836">━━━━━</span></span><span class="dim">121k</span><span class="dim">1:55</span><span class="dim">≈$0.18</span></div><div class="row"><img class="av" src="../crew/scout-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Run the tests and report</span><span style="color:#4CC38A">light</span><span class="dim">Haiku 5.5</span><span class="grow"></span><span class="bar"><span style="color:#4CC38A"></span><span style="color:#3a3836">━━━━━━</span></span><span class="dim">48k</span><span class="dim">0:37</span><span class="dim">≈$0.02</span></div></div>
 </div></body></html>

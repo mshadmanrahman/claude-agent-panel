@@ -1,8 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
 :root{
-  --paper:#FAF9F5; --card:#FFFFFF; --ink:#1F1E1C; --mute:#8A877F; --line:#E7E4DC;
-  --coral:#D97757; --green:#3BA55C; --amber:#D99A3B; --red:#C0392B; --grey:#9AA0A6;
-  --blue:#2B35FF; --yellow:#FFE14D; --pink:#FF5C7A; --night:#1C2632;
+  --paper:#151515; --card:#201f20; --ink:#ecebe8; --mute:#a6a39b; --line:#333230; --chip:#2a2928; --body:#c9c6bf;
+  --coral:#D97757; --green:#4CC38A; --amber:#E0A44A; --red:#E5534B; --grey:#8e8e93;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -16,13 +15,13 @@ img.av{width:50px;height:41px;image-rendering:pixelated;flex-shrink:0}
 .row .desc{font-weight:600;overflow:hidden;text-overflow:ellipsis}
 .grow{flex:1}
 .bar{font-family:'JetBrains Mono',monospace;letter-spacing:-1px}
-.btn{border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13px;font-weight:500;background:#fff}
-.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn{border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13px;font-weight:500;background:var(--chip)}
+.btn.primary{background:var(--coral);color:#fff;border-color:var(--coral)}
 .prompt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--mute);font-size:15px;display:flex;justify-content:space-between;align-items:center}
 .send{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;color:#fff;font-weight:700}
 
 /* Numbered callouts */
-.pin{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:800 15px Archivo,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 4px var(--paper)}
+.pin{width:30px;height:30px;border-radius:50%;background:var(--coral);color:#fff;font:800 15px Archivo,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 4px var(--paper)}
 .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 28px;margin-top:26px}
 .legend div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4}
 .legend b{display:block;font-size:16px}
@@ -38,7 +37,7 @@ img.av{width:50px;height:41px;image-rendering:pixelated;flex-shrink:0}
 .cursor{display:inline-block;width:9px;height:18px;background:#E6E6E6;vertical-align:-3px}
 
 h1,h2,.display{font-family:Archivo,sans-serif}
-.step{font:800 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.step{font:800 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--coral)}
 .cap{font-size:22px;font-weight:700;font-family:Archivo,sans-serif;margin:6px 0 18px}
 </style></head><body>
 <div style="padding:40px 48px">
