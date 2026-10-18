@@ -1,0 +1,17 @@
+{
+  "name": "claude-agent-panel",
+  "description": "Claude Code mods: a live agent and weekly-usage band, and a one-click compact band.",
+  "owner": {
+    "name": "Shadman Rahman"
+  },
+  "plugins": [
+    {
+      "name": "agent-panel",
+      "source": "./agent-panel"
+    },
+    {
+      "name": "context-band",
+      "source": "./context-band"
+    }
+  ]
+}

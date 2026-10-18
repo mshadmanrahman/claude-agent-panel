@@ -1,0 +1,9 @@
+{
+  "name": "context-band",
+  "version": "0.1.0",
+  "description": "Band above the prompt with a Compact button once context passes 60%",
+  "author": {
+    "name": "Shadman Rahman"
+  },
+  "types": "./types/index.d.ts"
+}

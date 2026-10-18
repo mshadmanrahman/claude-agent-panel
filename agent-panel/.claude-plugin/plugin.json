@@ -1,0 +1,9 @@
+{
+  "name": "agent-panel",
+  "version": "0.1.0",
+  "description": "Band above the prompt for every subagent: pixel avatars by role, cost, tokens read, context, steps and time.",
+  "author": {
+    "name": "Shadman Rahman"
+  },
+  "types": "./types/index.d.ts"
+}
