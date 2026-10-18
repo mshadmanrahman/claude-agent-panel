@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#FAF9F5; --card:#FFFFFF; --ink:#1F1E1C; --mute:#8A877F; --line:#E7E4DC;
+  --coral:#D97757; --green:#3BA55C; --amber:#D99A3B; --red:#C0392B; --grey:#9AA0A6;
+  --blue:#2B35FF; --yellow:#FFE14D; --pink:#FF5C7A; --night:#1C2632;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',monospace}
+.dim{color:var(--mute)}
+img.av{width:50px;height:41px;image-rendering:pixelated;flex-shrink:0}
+
+/* The band as the app draws it */
+.band{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:12px;font-size:14px}
+.row{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.row .desc{font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.grow{flex:1}
+.bar{font-family:'JetBrains Mono',monospace;letter-spacing:-1px}
+.btn{border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13px;font-weight:500;background:#fff}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--mute);font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.send{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;color:#fff;font-weight:700}
+
+/* Numbered callouts */
+.pin{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:800 15px Archivo,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 4px var(--paper)}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 28px;margin-top:26px}
+.legend div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4}
+.legend b{display:block;font-size:16px}
+.legend .pin{flex-shrink:0}
+
+/* Terminal */
+.term{background:#1E1E1E;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.18);font-family:'JetBrains Mono',monospace;font-size:15px;color:#E6E6E6}
+.term .top{background:#323232;height:34px;display:flex;align-items:center;gap:8px;padding:0 14px}
+.term .top i{width:12px;height:12px;border-radius:50%;display:block}
+.term .top span{flex:1;text-align:center;color:#A0A0A0;font-size:13px;font-family:Inter,sans-serif;margin-right:56px}
+.term .body{padding:20px 22px;line-height:1.75;white-space:pre-wrap}
+.ok{color:#4EC97A}.cy{color:#6CB6FF}.yl{color:#FFD866}.gr{color:#7A7A7A}
+.cursor{display:inline-block;width:9px;height:18px;background:#E6E6E6;vertical-align:-3px}
+
+h1,h2,.display{font-family:Archivo,sans-serif}
+.step{font:800 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.cap{font-size:22px;font-weight:700;font-family:Archivo,sans-serif;margin:6px 0 18px}
+</style></head><body>
+<div style="padding:40px 48px">
+  <div class="step">Step 2 · Paste the magic line</div>
+  <div class="cap">Paste it with ⌘ Command + V, then press Enter.</div>
+  <div class="term"><div class="top"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><span>Terminal</span></div><div class="body" style="min-height:120px"><span class="ok">you@mac</span> <span class="cy">~</span> % claude plugin marketplace add mshadmanrahman/claude-agent-panel &amp;&amp; claude plugin install agent-panel@claude-agent-panel &amp;&amp; claude plugin install context-band@claude-agent-panel<span class="cursor"></span></div></div>
+</div></body></html>

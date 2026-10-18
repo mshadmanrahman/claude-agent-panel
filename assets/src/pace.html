@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#FAF9F5; --card:#FFFFFF; --ink:#1F1E1C; --mute:#8A877F; --line:#E7E4DC;
+  --coral:#D97757; --green:#3BA55C; --amber:#D99A3B; --red:#C0392B; --grey:#9AA0A6;
+  --blue:#2B35FF; --yellow:#FFE14D; --pink:#FF5C7A; --night:#1C2632;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',monospace}
+.dim{color:var(--mute)}
+img.av{width:50px;height:41px;image-rendering:pixelated;flex-shrink:0}
+
+/* The band as the app draws it */
+.band{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:12px;font-size:14px}
+.row{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.row .desc{font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.grow{flex:1}
+.bar{font-family:'JetBrains Mono',monospace;letter-spacing:-1px}
+.btn{border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13px;font-weight:500;background:#fff}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--mute);font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.send{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;color:#fff;font-weight:700}
+
+/* Numbered callouts */
+.pin{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:800 15px Archivo,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 4px var(--paper)}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 28px;margin-top:26px}
+.legend div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4}
+.legend b{display:block;font-size:16px}
+.legend .pin{flex-shrink:0}
+
+/* Terminal */
+.term{background:#1E1E1E;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.18);font-family:'JetBrains Mono',monospace;font-size:15px;color:#E6E6E6}
+.term .top{background:#323232;height:34px;display:flex;align-items:center;gap:8px;padding:0 14px}
+.term .top i{width:12px;height:12px;border-radius:50%;display:block}
+.term .top span{flex:1;text-align:center;color:#A0A0A0;font-size:13px;font-family:Inter,sans-serif;margin-right:56px}
+.term .body{padding:20px 22px;line-height:1.75;white-space:pre-wrap}
+.ok{color:#4EC97A}.cy{color:#6CB6FF}.yl{color:#FFD866}.gr{color:#7A7A7A}
+.cursor{display:inline-block;width:9px;height:18px;background:#E6E6E6;vertical-align:-3px}
+
+h1,h2,.display{font-family:Archivo,sans-serif}
+.step{font:800 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.cap{font-size:22px;font-weight:700;font-family:Archivo,sans-serif;margin:6px 0 18px}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.vd{font:800 22px Archivo,sans-serif;margin:14px 0 6px}
+.pc p{font-size:15px;line-height:1.4;color:#4A4843}
+</style></head><body>
+<div style="padding:40px 48px">
+  <div class="step">The weekly bar</div>
+  <div class="cap">First number: how much you used. Second: how much of the week is gone.</div>
+  <div class="grid"><div class="pc"><div class="row" style="gap:8px"><span class="bar"><span style="color:#3BA55C">███</span><span style="color:#D5D2CA">░░░░░░░</span></span><span class="dim mono" style="font-size:13px">30% / 60% Week</span></div><div class="vd" style="color:#3BA55C">Under Pace</div><p>You are using less than the week so far. Relax, keep going.</p></div><div class="pc"><div class="row" style="gap:8px"><span class="bar"><span style="color:#9AA0A6">█████</span><span style="color:#D5D2CA">░░░░░</span></span><span class="dim mono" style="font-size:13px">52% / 55% Week</span></div><div class="vd" style="color:#9AA0A6">On Pace</div><p>Right on track to last the whole week.</p></div><div class="pc"><div class="row" style="gap:8px"><span class="bar"><span style="color:#D99A3B">██████</span><span style="color:#D5D2CA">░░░░</span></span><span class="dim mono" style="font-size:13px">61% / 55% Week</span></div><div class="vd" style="color:#D99A3B">Ahead Of Pace</div><p>A bit fast. Use lighter models or shorter chats for a while.</p></div><div class="pc"><div class="row" style="gap:8px"><span class="bar"><span style="color:#C0392B">████████</span><span style="color:#D5D2CA">░░</span></span><span class="dim mono" style="font-size:13px">80% / 55% Week</span></div><div class="vd" style="color:#C0392B">Over Pace</div><p>At this speed you run out before the week resets. Slow down.</p></div></div>
+  <p class="dim" style="margin-top:22px;font-size:15px">Example: <b style="color:var(--ink)">58% / 64%</b> means you used 58% of your weekly limit, and 64% of the week has passed. You are fine.</p>
+</div></body></html>

@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#FAF9F5; --card:#FFFFFF; --ink:#1F1E1C; --mute:#8A877F; --line:#E7E4DC;
+  --coral:#D97757; --green:#3BA55C; --amber:#D99A3B; --red:#C0392B; --grey:#9AA0A6;
+  --blue:#2B35FF; --yellow:#FFE14D; --pink:#FF5C7A; --night:#1C2632;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',monospace}
+.dim{color:var(--mute)}
+img.av{width:50px;height:41px;image-rendering:pixelated;flex-shrink:0}
+
+/* The band as the app draws it */
+.band{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:12px;font-size:14px}
+.row{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.row .desc{font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.grow{flex:1}
+.bar{font-family:'JetBrains Mono',monospace;letter-spacing:-1px}
+.btn{border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13px;font-weight:500;background:#fff}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:var(--mute);font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.send{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;color:#fff;font-weight:700}
+
+/* Numbered callouts */
+.pin{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font:800 15px Archivo,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 4px var(--paper)}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 28px;margin-top:26px}
+.legend div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4}
+.legend b{display:block;font-size:16px}
+.legend .pin{flex-shrink:0}
+
+/* Terminal */
+.term{background:#1E1E1E;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.18);font-family:'JetBrains Mono',monospace;font-size:15px;color:#E6E6E6}
+.term .top{background:#323232;height:34px;display:flex;align-items:center;gap:8px;padding:0 14px}
+.term .top i{width:12px;height:12px;border-radius:50%;display:block}
+.term .top span{flex:1;text-align:center;color:#A0A0A0;font-size:13px;font-family:Inter,sans-serif;margin-right:56px}
+.term .body{padding:20px 22px;line-height:1.75;white-space:pre-wrap}
+.ok{color:#4EC97A}.cy{color:#6CB6FF}.yl{color:#FFD866}.gr{color:#7A7A7A}
+.cursor{display:inline-block;width:9px;height:18px;background:#E6E6E6;vertical-align:-3px}
+
+h1,h2,.display{font-family:Archivo,sans-serif}
+.step{font:800 15px Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.cap{font-size:22px;font-weight:700;font-family:Archivo,sans-serif;margin:6px 0 18px}
+</style></head><body>
+<div style="padding:40px 48px 40px 68px">
+  <div class="step">What you are looking at</div>
+  <div class="cap">The agent band sits right above the box where you type.</div>
+  <div style="position:relative">
+    <div class="band"><div class="row"><b>Agents</b><span class="dim">≈$1.67 · 665k · 4:12</span><span class="grow"></span><span class="dim">Usage</span><span class="bar"><span style="color:#9AA0A6">██████</span><span style="color:#D5D2CA">░░░░</span></span><span class="dim">58% / 64% Week, On Pace</span><span class="btn">Hide</span></div><div class="row"><img class="av" src="../crew/main-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Main agent</span><span style="color:#4A9FD9">medium</span><span class="dim">Opus 5.5</span><span class="grow"></span><span class="bar"><span style="color:#4A9FD9">━━</span><span style="color:#D5D2CA">━━━━</span></span><span class="dim">312k</span><span class="dim">4:12</span><span class="dim">≈$1.06</span></div><div class="row"><img class="av" src="../crew/architect-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Plan the recipe-search page</span><span style="color:#D99A3B">careful</span><span class="dim">Opus 5.5</span><span class="grow"></span><span class="bar"><span style="color:#D99A3B">━</span><span style="color:#D5D2CA">━━━━━</span></span><span class="dim">184k</span><span class="dim">2:40</span><span class="dim">≈$0.41</span></div><div class="row"><img class="av" src="../crew/developer-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Build the search filters</span><span style="color:#4A9FD9">medium</span><span class="dim">Sonnet 5.5</span><span class="grow"></span><span class="bar"><span style="color:#4A9FD9">━</span><span style="color:#D5D2CA">━━━━━</span></span><span class="dim">121k</span><span class="dim">1:55</span><span class="dim">≈$0.18</span></div><div class="row"><img class="av" src="../crew/scout-running.svg" alt=""><img src="../crew/dots.svg" style="width:20px;height:10px" alt=""><span class="desc">Run the tests and report</span><span style="color:#3BB8A0">light</span><span class="dim">Haiku 5.5</span><span class="grow"></span><span class="bar"><span style="color:#3BB8A0"></span><span style="color:#D5D2CA">━━━━━━</span></span><span class="dim">48k</span><span class="dim">0:37</span><span class="dim">≈$0.02</span></div><div class="row"><span class="dim">3 done · ≈$0.52</span><span class="btn">Show</span></div></div>
+    <div class="pin" style="position:absolute;left:-42px;top:12px">1</div>
+    <div class="pin" style="position:absolute;right:470px;top:-14px">2</div>
+    <div class="pin" style="position:absolute;left:-42px;top:62px">3</div>
+    <div class="pin" style="position:absolute;left:330px;top:52px">4</div>
+    <div class="pin" style="position:absolute;right:150px;top:52px">5</div>
+    <div class="pin" style="position:absolute;left:-42px;bottom:12px">6</div>
+  </div>
+  <div class="prompt" style="margin-top:12px"><span>Reply to Claude…</span><span class="send">↑</span></div>
+  <div class="legend">
+    <div><span class="pin">1</span><span><b>Running total</b>Rough cost, tokens read and time for this chat and all its helpers.</span></div>
+    <div><span class="pin">2</span><span><b>Weekly limit</b>How much of your week you have used, against how much of the week has passed.</span></div>
+    <div><span class="pin">3</span><span><b>The crew</b>The main chat wears the captain's hat. Each helper agent gets its own character.</span></div>
+    <div><span class="pin">4</span><span><b>Effort and model</b>How hard it thinks (light, medium, careful, heavy) and which Claude it is.</span></div>
+    <div><span class="pin">5</span><span><b>Memory, time, cost</b>How full its memory is, how long it has run, about what it cost.</span></div>
+    <div><span class="pin">6</span><span><b>Finished helpers</b>Done agents fold into one line. Press Show to see them again.</span></div>
+  </div>
+</div></body></html>
