@@ -12,9 +12,17 @@ Watch your helper agents work, see what they cost, and know if your weekly limit
 ![No coding needed](https://img.shields.io/badge/coding-not%20needed-3BA55C)
 ![Install time](https://img.shields.io/badge/install-2%20minutes-FFE14D)
 
-[What it does](#what-you-get) · [Install](#install-it-pick-one-way) · [Did it work?](#did-it-work) · [Help!](#something-went-wrong) · [Remove it](#remove-it)
+[Watch it](#watch-it-work) · [What it does](#what-you-get) · [Install](#install-it-pick-one-way) · [Did it work?](#did-it-work) · [Help!](#something-went-wrong) · [Remove it](#remove-it)
 
 </div>
+
+---
+
+## Watch it work
+
+You ask Claude for help, the crew shows up above the box where you type, and each helper cheers when its job is done.
+
+<img src="assets/demo.svg" alt="Animated demo of the Claude app: you ask for three agents, they appear above the prompt box, finish one by one and fold away" width="100%">
 
 ---
 
